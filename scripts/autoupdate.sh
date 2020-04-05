@@ -10,7 +10,6 @@ if [ -f /mnt/mmcblk0p2/R2S*.zip ]; then
 else
 	echo -e '\e[91m没找到最新的固件，脚本退出\e[0m'
 		exit 1
-	fi
 fi
 unzip R2S*.zip
 rm R2S*.zip
