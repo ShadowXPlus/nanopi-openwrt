@@ -2,16 +2,13 @@
 
 cd /mnt/mmcblk0p2
 rm -rf artifact R2S*.zip FriendlyWrt*img*
-wget https://github.com/klever1988/nanopi-openwrt/releases/download/R2S-Minimal-$(date +%Y-%m-%d)/R2S-Minimal-$(date +%Y-%m-%d)-ROM.zip
+echo -e "请输入需要下载的版本日期（如2020-04-01）:"
+read DATE
+wget https://github.com/klever1988/nanopi-openwrt/releases/download/R2S-Minimal-$DATE/R2S-Minimal-$DATE-ROM.zip
 if [ -f /mnt/mmcblk0p2/R2S*.zip ]; then
 	echo -e '\e[92m今天固件已下载，准备解压\e[0m'
 else
-	echo -e '\e[91m今天的固件还没更新，尝试下载昨天的固件\e[0m'
-	wget https://github.com/klever1988/nanopi-openwrt/releases/download/R2S-Minimal-$(date -d "@$(( $(busybox date +%s) - 86400))" +%Y-%m-%d)/R2S-Minimal-$(date -d "@$(( $(busybox date +%s) - 86400))" +%Y-%m-%d)-ROM.zip
-	if [ -f /mnt/mmcblk0p2/R2S*.zip ]; then
-		echo -e '\e[92m昨天的固件已下载，准备解压\e[0m'
-	else
-		echo -e '\e[91m没找到最新的固件，脚本退出\e[0m'
+	echo -e '\e[91m没找到最新的固件，脚本退出\e[0m'
 		exit 1
 	fi
 fi
