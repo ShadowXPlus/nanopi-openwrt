@@ -6,9 +6,9 @@ echo -e "请输入需要下载的版本日期（如2020-04-01）:"
 read DATE
 wget https://github.com/klever1988/nanopi-openwrt/releases/download/R2S-Minimal-$DATE/R2S-Minimal-$DATE-ROM.zip
 if [ -f /mnt/mmcblk0p2/R2S*.zip ]; then
-	echo -e '\e[92m今天固件已下载，准备解压\e[0m'
+	echo -e '\e[92m固件已下载，准备解压\e[0m'
 else
-	echo -e '\e[91m没找到最新的固件，脚本退出\e[0m'
+	echo -e '\e[91m没找到固件，脚本退出\e[0m'
 		exit 1
 fi
 unzip R2S*.zip
