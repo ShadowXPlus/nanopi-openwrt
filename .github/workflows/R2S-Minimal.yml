@@ -80,7 +80,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
-          #CONFIG_PACKAGE_luci-app-ssrserver-python=y
+          # CONFIG_PACKAGE_luci-app-ssrserver-python is not set
           CONFIG_PACKAGE_luci-app-uhttpd=y
           CONFIG_PACKAGE_luci-app-unblockmusic=y
           CONFIG_PACKAGE_luci-app-v2ray-server=y
